@@ -1,1 +1,10 @@
 Leiningen.gitignore
+*.iml
+
+target/
+
+\.idea/
+
+\.nrepl-port
+
+\.hgignore
