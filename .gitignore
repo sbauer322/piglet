@@ -8,3 +8,5 @@ target/
 \.nrepl-port
 
 \.hgignore
+
+\.lein-env
