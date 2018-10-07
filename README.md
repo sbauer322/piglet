@@ -1,36 +1,44 @@
 # piglet
 
-FIXME: description
+_ortsnay! oinkway!_
 
-## Installation
+piglet is a microservice to convert standard English strings into pig latin.
 
-Download from http://example.com/FIXME.
+Prerequisites
 
-## Usage
+You'll need the following installed in order to build piglet:
 
-FIXME: explanation
+    - Clojure 1.9
+    - Leinigen 2.5+
 
-    $ java -jar piglet-0.1.0-standalone.jar [args]
+## Development
 
-## Options
+A simple `lein run` will do the trick to launch the service. The default address is `localhost:3000`.
 
-FIXME: listing of options this app accepts.
+Configurations are stored in `env/dev/resources/config.edn` and `env/dev/prod/config.edn` for the respective profiles. All sensitive config should be untracked and located elsewhere. See `yogthos/config` and `environ` for more information.
 
-## Examples
+A certain profile can be specified - for the dev profile `lein with-profile dev run`.
 
-...
+## Production
 
-### Bugs
+    lein uberjar
+    java -jar piglet-0.1.0-standalone.jar [args]
 
-...
+With an uberjar, an additional config file can be passed in via something like the following snippet for the Java command: `-Dconfig="config.edn"`. This will merge and overwrite with the default config values.
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+## API
 
-## License
+> Note the project is under active development and may experience sudden breaking changes between commits
 
-Copyright © 2018 FIXME
+`api/v1.0/pig-latin` expects a json body as part of the `POST` request consisting of:
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+    {
+        "msg": "your phrase goes here"
+    }
+    
+and responds with:
+
+    {
+      "original": "your phrase goes here",
+      "translation": "ouryay asephray oesgay erehay"
+    }
