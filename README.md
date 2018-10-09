@@ -22,7 +22,7 @@ A certain profile can be specified - for the dev profile `lein with-profile dev 
 ## Production
 
     lein uberjar
-    java -jar piglet-0.1.0-standalone.jar [args]
+    java -jar piglet.jar [args]
 
 With an uberjar, an additional config file can be passed in via something like the following snippet for the Java command: `-Dconfig="config.edn"`. This will merge and overwrite with the default config values.
 

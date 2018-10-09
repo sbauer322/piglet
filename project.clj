@@ -21,7 +21,9 @@
   [:target-path "target/%s"]
   :source-paths ["src"]
   :resource-paths ["resources"]
-  :profiles {:uberjar {:aot :all
+  :profiles {:uberjar {:omit-source true
+                       :aot :all
+                       :uberjar-name "piglet.jar"
                        :resource-paths ["env/prod/resources"]}
              :dev [:project/dev :profiles/dev]
              :test [:project/dev :project/test :profiles/test]
