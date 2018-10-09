@@ -47,3 +47,13 @@ and responds with:
       "original": "your phrase goes here",
       "translation": "ouryay asephray oesgay erehay"
     }
+
+## Potential Todos
+
+- Logging
+- Pass in config override file path for docker
+- Cache results
+- Rate delimiting
+- Handle punctuation during translation
+- Status/heartbeat endpoint
+- Support alternate "ay/way" endings
