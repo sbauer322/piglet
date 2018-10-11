@@ -18,7 +18,9 @@
                  (POST "/pig-latin" req
                    (let [msg (get (:body req) "msg")]
                      (response {:original msg
-                                :translation (pig-latin msg)})))))))
+                                :translation (pig-latin msg)})))
+                 (GET "/heartbeat" []
+                      (response {:status "OK"}))))))
 
 (defroutes routes
            api-routes
